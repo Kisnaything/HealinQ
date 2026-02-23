@@ -1,5 +1,2 @@
 # HealinQ
 
-#Kisnayy
-
-#Diandraaaa
