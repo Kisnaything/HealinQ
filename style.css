@@ -1,3 +1,25 @@
+/* =========================
+   Global font enforcement
+========================= */
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.sign-up input,
+.sign-up button,
+.sign-up textarea,
+.sign-up select {
+  font-family: "Poppins", sans-serif;
+}
+
+.sign-up input::placeholder,
+.sign-up textarea::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   Page container
+========================= */
 .sign-up {
   background-color: #d4effc;
   overflow: hidden;
@@ -6,6 +28,9 @@
   position: relative;
 }
 
+/* =========================
+   Background decoration
+========================= */
 .sign-up .ellipse {
   top: 384px;
   left: -312px;
@@ -96,7 +121,11 @@
   width: 343px;
   height: 343px;
   border-radius: 171.45px;
-  background: linear-gradient(159deg, rgba(255, 250, 194, 1) 0%, rgba(255, 255, 10, 1) 100%);
+  background: linear-gradient(
+    159deg,
+    rgba(255, 250, 194, 1) 0%,
+    rgba(255, 255, 10, 1) 100%
+  );
   position: absolute;
   aspect-ratio: 1;
 }
@@ -110,6 +139,9 @@
   max-height: 100vh;
 }
 
+/* =========================
+   Card container & content
+========================= */
 .sign-up .rectangle {
   position: absolute;
   top: 50%;
@@ -124,19 +156,22 @@
   box-shadow: 0px 0px 10.65px #0000004c;
 }
 
+/* Content wrapper */
 .sign-up .frame {
-  flex-direction: column;
-  width: 440px;
-  height: 589px;
-  gap: 21.3px;
-  padding: 28.4px 0px;
   position: absolute;
-  top: calc(50% - 295px);
-  left: 66px;
+  top: 50%;
+  left: 23%;
+  transform: translate(-50%, -50%);
+  width: min(440px, 90%);
+  height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 21.3px;
+  padding: 28.4px 0;
 }
 
+/* Title row */
 .sign-up .div-wrapper {
   height: 63.89px;
   justify-content: center;
@@ -154,7 +189,6 @@
   height: 80.93px;
   margin-top: -16.33px;
   margin-bottom: -14.91px;
-  font-family: "Poppins-Bold", Helvetica;
   font-weight: 700;
   color: #0c72a6;
   font-size: 45.4px;
@@ -167,6 +201,18 @@
   line-height: normal;
 }
 
+/* ===============
+   Form layout
+================== */
+.sign-up .signup-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 21.3px;
+}
+
+/* Input */
 .sign-up .frame-2 {
   display: flex;
   width: 376.27px;
@@ -177,26 +223,10 @@
   flex: 0 0 auto;
   background-color: #ffffff;
   border-radius: 35.5px;
-  border: 0.71px solid;
-  border-color: #a3a3a3;
+  border: 0.71px solid #a3a3a3;
 }
 
-.sign-up .text-wrapper-2 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: -0.71px;
-  font-family: "Poppins-Regular", Helvetica;
-  font-weight: 400;
-  color: #a3a3a3;
-  font-size: 14.2px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
+/* Divider */
 .sign-up .frame-3 {
   width: 376.27px;
   justify-content: center;
@@ -215,6 +245,13 @@
   height: 1px;
 }
 
+.sign-up .img {
+  margin-right: -6.79px;
+  position: relative;
+  width: 170.38px;
+  height: 1px;
+}
+
 .sign-up .text-wrapper-3 {
   position: relative;
   display: flex;
@@ -222,7 +259,6 @@
   justify-content: center;
   width: fit-content;
   margin-top: -0.71px;
-  font-family: "Poppins-Regular", Helvetica;
   font-weight: 400;
   color: #2c2c2c;
   font-size: 14.2px;
@@ -231,13 +267,7 @@
   line-height: normal;
 }
 
-.sign-up .img {
-  margin-right: -6.79px;
-  position: relative;
-  width: 170.38px;
-  height: 1px;
-}
-
+/* Google button */
 .sign-up .frame-4 {
   width: 376.27px;
   justify-content: center;
@@ -247,10 +277,20 @@
   flex: 0 0 auto;
   background-color: #ffffff;
   border-radius: 35.5px;
-  border: 0.71px solid;
-  border-color: #a3a3a3;
+  border: 0.71px solid #a3a3a3;
   display: flex;
   align-items: center;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sign-up .frame-4:hover {
+  background-color: #f5f5f5;
+}
+
+.sign-up .frame-4:active {
+  transform: scale(0.99);
 }
 
 .sign-up .image {
@@ -261,6 +301,7 @@
   object-fit: cover;
 }
 
+/* Submit button */
 .sign-up .frame-5 {
   width: 376.27px;
   height: 39.76px;
@@ -272,11 +313,18 @@
   border-radius: 35.5px;
   display: flex;
   align-items: center;
+
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sign-up .frame-5:hover {
+  filter: brightness(0.95);
 }
 
 .sign-up .text-wrapper-4 {
   width: fit-content;
-  font-family: "Poppins-Medium", Helvetica;
   font-weight: 500;
   color: #ffffff;
   font-size: 14.2px;
@@ -289,6 +337,7 @@
   line-height: normal;
 }
 
+/* Bottom text */
 .sign-up .frame-6 {
   height: 28.4px;
   justify-content: center;
@@ -309,11 +358,16 @@
   width: fit-content;
   margin-top: -4.11px;
   margin-bottom: -2.69px;
-  font-family: "Poppins-Regular", Helvetica;
   font-weight: 400;
   color: #0c72a6;
   font-size: 14.2px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
+  gap: 5px;
+}
+
+.sign-up .signin-link {
+  color: #0c72a6;
+  font-weight: 600;
 }
