@@ -1,25 +1,48 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* =========================
+   Base / Reset
+========================= */
 * {
-  -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
+
 html,
 body {
-  margin: 0px;
   height: 100%;
-  font-family: 'Poppins-Regular', sans-serif;
+  margin: 0;
+  font-family: "Poppins", "Poppins-Regular", sans-serif;
+}
+
+/* Local font (kalau kamu memang punya folder fonts) */
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Poppins-Regular';
-    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
 
-/* a blue color as a generic focus style */
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
   outline: -webkit-focus-ring-color auto 5px !important;
 }
+
 a {
   text-decoration: none;
 }
