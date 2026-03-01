@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Journaling</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style_journaling.css">
+</head>
+<body>
+
+  <div class="journaling">
+    <!-- background blur circles (satu-satu) -->
+    <div class="ellipse ellipse-1"></div>
+    <div class="ellipse ellipse-2"></div>
+    <div class="ellipse ellipse-3"></div>
+    <div class="ellipse ellipse-4"></div>
+    <div class="ellipse ellipse-5"></div>
+    <div class="ellipse ellipse-6"></div>
+
+    <main class="container">
+
+      <header class="journal-top">
+        <div class="title-area">
+          <h1 class="page-title">Daily Journaling</h1>
+          <div class="subtitle">Where thoughts find their words</div>
+        </div>
+
+        <div class="top-actions">
+          <div class="pill">Sunday, 1 March 2026</div>
+          <button class="btn-primary" type="button">+ New Entry</button>
+        </div>
+      </header>
+
+      <section class="mood-bar">
+        <div class="mood-label">Track Your Mood Today</div>
+
+        <div class="mood-emojis" aria-label="Mood options">
+          <button class="emoji" type="button" aria-label="Sad">😔</button>
+          <button class="emoji" type="button" aria-label="Unsure">😕</button>
+          <button class="emoji" type="button" aria-label="Neutral">😐</button>
+          <button class="emoji" type="button" aria-label="Good">🙂</button>
+          <button class="emoji" type="button" aria-label="Happy">😄</button>
+        </div>
+
+        <div class="mood-divider" aria-hidden="true"></div>
+
+        <div class="mood-input" type="text">Tell me how do you feel today...</div>
+      </section>
+
+      <section class="journal-grid">
+        <article class="journal-section">
+          <h3 class="section-title">Gratitude</h3>
+
+          <form class="note-card" action="#">
+            <textarea class="note-input" placeholder="Write your note here..." rows="5"></textarea>
+            <div class="note-footer"><span class="time">--:--</span></div>
+          </form>
+
+          <form class="note-card" action="#">
+            <textarea class="note-input" placeholder="Write your note here..." rows="5"></textarea>
+            <div class="note-footer"><span class="time">--:--</span></div>
+          </form>
+
+          <button class="btn-secondary" type="button">+ Write more</button>
+        </article>
+
+        <article class="journal-section">
+          <h3 class="section-title">Feeling</h3>
+
+          <form class="note-card" action="#">
+            <textarea class="note-input" placeholder="Write your note here..." rows="5"></textarea>
+            <div class="note-footer"><span class="time">--:--</span></div>
+          </form>
+
+          <button class="btn-secondary" type="button">+ Write more</button>
+        </article>
+
+        <article class="journal-section">
+          <h3 class="section-title">Reflection</h3>
+
+          <form class="note-card" action="#">
+            <textarea class="note-input" placeholder="Write your note here..." rows="5"></textarea>
+            <div class="note-footer"><span class="time">--:--</span></div>
+          </form>
+
+          <button class="btn-secondary" type="button">+ Write more</button>
+        </article>
+
+        <article class="journal-section">
+          <h3 class="section-title">Niat Besok</h3>
+
+          <form class="note-card" action="#">
+            <textarea class="note-input" placeholder="Write your note here..." rows="5"></textarea>
+            <div class="note-footer"><span class="time">--:--</span></div>
+          </form>
+
+          <button class="btn-secondary" type="button">+ Write more</button>
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

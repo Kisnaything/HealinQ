@@ -1,0 +1,316 @@
+/* =========================
+   Global
+========================= */
+*{
+  font-family:"Poppins", sans-serif;
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+}
+
+/* =========================
+   Page container (NO BIG WHITE BOX)
+========================= */
+.journaling{
+  background-color:#d4effc;
+  overflow:hidden;
+  width:100%;
+  min-height:100vh;
+  position:relative;
+  padding: 30px 24px 42px;
+}
+
+.journaling input,
+.journaling button,
+.journaling textarea,
+.journaling select{
+  font-family:"Poppins", sans-serif;
+}
+
+.journaling input::placeholder,
+.journaling textarea::placeholder{
+  font-family:"Poppins", sans-serif;
+}
+
+/* =========================
+   Background decoration circles
+   (hapus circle kuning)
+========================= */
+.ellipse{
+  position:absolute;
+  filter: blur(70.99px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  pointer-events:none;
+  opacity: 0.9;
+}
+
+/* kamu bebas adjust posisi biar makin mirip figma */
+.ellipse-1{
+  top: 380px;
+  left: -320px;
+  width: 393px;
+  height: 393px;
+  background-color:#53bab3b2;
+}
+
+.ellipse-2{
+  top: -270px;
+  left: 700px;
+  width: 420px;
+  height: 420px;
+  background-color:#53bab3b2;
+}
+
+.ellipse-3{
+  top: -220px;
+  left: 220px;
+  width: 385px;
+  height: 385px;
+  background-color:#ffe5f3cc;
+}
+
+.ellipse-4{
+  top: 120px;
+  left: 780px;
+  width: 385px;
+  height: 385px;
+  background-color:#ffe5f3cc;
+}
+
+.ellipse-5{
+  top: 650px;
+  left: -40px;
+  width: 421px;
+  height: 421px;
+  background-color:#ffe5f3cc;
+}
+
+.ellipse-6{
+  top: 520px;
+  left: 360px;
+  width: 385px;
+  height: 385px;
+  background-color:#9ad9f8cc;
+}
+
+/* =========================
+   Content container (transparent)
+========================= */
+.container{
+  position:relative;
+  z-index:2;
+  width:min(1240px, 96vw);
+  margin: 0 auto;
+}
+
+/* =========================
+   Header
+========================= */
+.journal-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom: 18px;
+}
+
+.mini-title{
+  font-weight:600;
+  color:#0c72a6;
+  font-size: 14px;
+}
+
+.page-title{
+  margin:0;
+  font-weight:800;
+  color:#0c72a6;
+  font-size: 52px;
+  line-height:1.05;
+}
+
+.subtitle{
+  margin-top: 4px;
+  color:#2f86ad;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.top-actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* pill dan button gaya signup */
+.pill{
+  background: rgba(255,255,255,.86);
+  border-radius: 35.5px;
+  border: 0.71px solid #a3a3a3;
+  padding: 8.52px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+}
+
+.btn-primary{
+  background-color:#0c72a6;
+  border:none;
+  color:#fff;
+  border-radius: 35.5px;
+  padding: 8.52px 18px;
+  font-weight: 600;
+  cursor:pointer;
+  transition: 0.2s ease;
+}
+.btn-primary:hover{ filter: brightness(0.95); }
+.btn-primary:active{ transform: scale(0.99); }
+
+/* =========================
+   Mood bar
+========================= */
+.mood-bar{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  padding: 12px 12px;
+  border-radius: 15px;
+  border: 0.7px solid rgba(163,163,163,.85);
+  background: rgba(255,255,255,.86);
+  backdrop-filter: blur(6px);
+  margin-bottom: 30px;
+}
+
+.mood-divider{
+  width:1px;
+  height:30px;
+  background: rgba(0,0,0);
+  flex: 0 0 auto;
+}
+
+.mood-label{
+  font-weight:600;
+  color:#0c72a6;
+  font-size: 16px;
+  white-space: nowrap;
+  padding: 0 15px;
+}
+
+.mood-emojis{
+  display:flex;
+  gap:10px;
+  padding-right:14px;
+  margin-right:6px;
+  position:relative;
+}
+
+.emoji{
+  border:none;
+  background: #F0F5F7;
+  cursor:pointer;
+  font-size: 18px;
+  padding: 6px 6px;
+  border-radius: 100px;
+  transition: 0.15s ease;
+}
+.emoji:hover{ background: rgba(245,245,245,.8); }
+
+.mood-input{
+  flex:1;
+  border:none;
+  outline:none;
+  font-size: 16px;
+  padding: 0 15px;
+  font-style: italic;
+}
+
+/* =========================
+   Grid & cards
+========================= */
+.journal-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: 22px;
+  align-items:start;
+}
+
+/* responsive */
+@media (max-width: 1100px){
+  .journal-grid{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+@media (max-width: 640px){
+  .journal-top{ flex-direction:column; }
+  .top-actions{ width:100%; justify-content:space-between; }
+  .journal-grid{ grid-template-columns: 1fr; }
+  .page-title{ font-size: 40px; }
+}
+
+/* Blue section card */
+.journal-section{
+  background:#0c6e8f;
+  border-radius: 22px;
+  padding: 16px;
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  box-shadow: 0px 0px 10.65px rgba(0,0,0,.18);
+}
+
+.section-title{
+  margin: 4px 2px 6px;
+  color:#ffffff;
+  font-weight:500;
+  font-size: 16px;
+}
+
+/* Note form */
+.note-card{
+  background:#ffffff;
+  border-radius: 16px;
+  padding: 12px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+  min-height: 170px;
+  box-shadow: 0px 0px 10.65px rgba(0,0,0,.10);
+}
+
+.note-input{
+  width:100%;
+  border:none;
+  outline:none;
+  resize:none;
+  font-size: 12px;
+  line-height: 1.45;
+  min-height: 120px;
+}
+
+.note-footer{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.time{
+  font-size: 11px;
+  color:#9aa8b2;
+}
+
+/* button + Write more */
+.btn-secondary{
+  width:100%;
+  background:#ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  cursor:pointer;
+  border: 1px dashed #999999;
+  color:#999999;
+  transition: 0.2s ease;
+  box-shadow: 0px 0px 10.65px rgba(0,0,0,.08);
+}
+.btn-secondary:hover{ background:#f5f5f5; }
+.btn-secondary:active{ transform: scale(0.99); }
