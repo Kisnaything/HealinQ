@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-.login {
+.main-site {
   background-color: #d4eefb;
   overflow: hidden;
   width: 100%;
@@ -15,103 +15,72 @@
 
 /* ===== BLUR BACKGROUND ===== */
 
-.login .ellipse,
-.login .ellipse-2,
-.login .ellipse-3,
-.login .ellipse-4,
-.login .ellipse-5,
-.login .ellipse-6,
-.login .div {
+.main-site .ellipse,
+.main-site .ellipse-2,
+.main-site .ellipse-3,
+.main-site .ellipse-4,
+.main-site .ellipse-5,
+.main-site .ellipse-6,
+.main-site .ellipse-7 {
   position: absolute;
   filter: blur(100px);
   aspect-ratio: 1;
+  border-radius: 50%;
 }
 
-.login .ellipse {
+.main-site .ellipse {
   top: 540px;
   left: -442px;
   width: 553px;
   height: 553px;
   background-color: #53bab3b2;
-  border-radius: 50%;
 }
 
-.login .div {
-  top: -371px;
-  left: 927px;
-  width: 553px;
-  height: 553px;
-  background-color: #53bab3b2;
-  border-radius: 50%;
-}
-
-.login .ellipse-2 {
+.main-site .ellipse-2 {
   top: -302px;
   left: 299px;
   width: 542px;
   height: 542px;
   background-color: #ffe5f3cc;
-  border-radius: 50%;
 }
 
-.login .ellipse-3 {
+.main-site .ellipse-3 {
   top: 171px;
   left: 1000px;
   width: 542px;
   height: 542px;
   background-color: #ffe5f3cc;
-  border-radius: 50%;
 }
 
-.login .ellipse-4 {
+.main-site .ellipse-4 {
   top: 908px;
   left: -49px;
   width: 593px;
   height: 593px;
   background-color: #ffe5f3cc;
-  border-radius: 50%;
 }
 
-.login .ellipse-5 {
+.main-site .ellipse-5 {
   top: 684px;
   left: 482px;
   width: 542px;
   height: 542px;
   background-color: #9ad9f8cc;
-  border-radius: 50%;
 }
 
-.login .ellipse-6 {
+.main-site .ellipse-6 {
   top: -116px;
   left: -216px;
   width: 542px;
   height: 542px;
   background-color: #9ad9f8cc;
-  border-radius: 50%;
 }
 
-/* ===== CARD LOGIN ===== */
-
-.login .rectangle {
-  position: absolute;
-  top: calc(50% - 415px);
-  left: 90px;
-  width: 620px;
-  height: 830px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0px 0px 15px #0000004c;
-}
-
-/* ===== GRADIENT CIRCLE ===== */
-
-.login .ellipse-7 {
-  position: absolute;
+.main-site .ellipse-7 {
   top: 12px;
   left: 902px;
   width: 483px;
   height: 483px;
-  border-radius: 50%;
   background: linear-gradient(
     159deg,
     rgba(255, 250, 194, 1) 0%,
@@ -119,106 +88,83 @@
   );
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== NAVBAR ===== */
 
-.login .frame {
-  position: absolute;
-  top: 125px;
-  left: 90px;
-  width: 620px;
-  height: 830px;
-  padding: 30px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-/* ===== LOGO AREA ===== */
-
-.login .group {
-  position: relative;
-  width: 182px;
-  height: 134px;
-}
-
-.login .img {
+.main-site .navbar {
   position: absolute;
   top: 0;
   left: 0;
-  width: 180px;
-  height: 110px;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.login .text-wrapper {
+/* ===== HERO SECTION ===== */
+
+.main-site .hero {
   position: absolute;
-  top: 95px;
-  left: 33px;
-  font-family: "ADLaM Display", sans-serif;
-  font-size: 30px;
-  background: linear-gradient(
-    180deg,
-    rgba(200, 223, 173, 1) 0%,
-    rgba(29, 146, 108, 1) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  top: 150px;
+  left: 90px;
+  width: 800px;
 }
 
-/* ===== TITLE ===== */
-
-.login .text-wrapper-2 {
+.main-site .hero-title {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #0c72a6;
   font-size: 64px;
-  text-align: center;
 }
 
-/* ===== INPUT FIELD ===== */
-
-.login .frame-2,
-.login .frame-4 {
-  width: 530px;
-  padding: 12px 30px;
-  background-color: #ffffff;
-  border-radius: 50px;
-  border: 1px solid #a3a3a3;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.login .text-wrapper-3 {
+.main-site .hero-subtitle {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
-  color: #a3a3a3;
+  color: #333;
+  margin-top: 20px;
+  line-height: 1.6;
 }
 
 /* ===== BUTTON ===== */
 
-.login .frame-5 {
-  width: 530px;
+.main-site .primary-button {
+  width: 250px;
   height: 56px;
   background-color: #0c72a6;
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
-.login .text-wrapper-5 {
+.main-site .primary-button span {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: #ffffff;
   font-size: 20px;
 }
 
-/* ===== FOOTER TEXT ===== */
+/* ===== ABOUT SECTION ===== */
 
-.login .p {
+.main-site .about-section {
+  position: absolute;
+  top: 600px;
+  left: 90px;
+  width: 1500px;
+}
+
+.main-site .about-title {
   font-family: "Poppins", sans-serif;
+  font-weight: 700;
   color: #0c72a6;
+  font-size: 48px;
+}
+
+.main-site .about-text {
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+  line-height: 1.8;
 }
