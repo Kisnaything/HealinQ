@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard User</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="user_dashboard.css" />
+</head>
+<body>
+
+  <div class="dash">
+
+    <!-- LEFT STICKY NAV -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="avatar" title="Profile"><img src="ikon profile.png"></div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item active" href="#">
+          <span class="icon">🏠</span>
+          <span class="label">Home</span>
+        </a>
+        <a class="nav-item" href="#">
+          <span class="icon">💬</span>
+          <span class="label">Konsultasi</span>
+        </a>
+        <a class="nav-item" href="journaling.html">
+          <span class="icon">💗</span>
+          <span class="label">Self-Healing</span>
+        </a>
+        <a class="nav-item" href="#">
+          <span class="icon">🧠</span>
+          <span class="label">Self-Discovery</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="brand-pill">
+          <div class="bunny"></div>
+          <span>HealinQ</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT CONTENT (SCROLL ONLY HERE) -->
+    <main class="main">
+
+      <!-- FIXED TOP RIGHT (LOGO + MASKOT) -->
+      <div class="top-brand" aria-label="HealinQ brand">
+        <!-- ganti src sesuai nama file kamu -->
+        <img class="brand-mascot" src="maskot1.png" alt="Mascot" />
+        <img class="brand-logo" src="Logo HealinQ.png" alt="HealinQ Logo" />
+      </div>
+
+      <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+          <h1>Hello, Buddy!</h1>
+          <p>Monday, 2 March 2026. How’s your day?</p>
+        </header>
+
+        <!-- HERO CARD -->
+        <section class="hero">
+          <div class="hero-inner">
+            <div class="quote">
+              <p class="quote-text">
+                “Take a deep breath. You’re doing better than you think.”
+              </p>
+              <p class="quote-sub">
+                Let’s make today gentle and meaningful ✨
+              </p>
+            </div>
+
+            <!-- HERO MASKOT -->
+            <img class="hero-bunny" src="maskot2.png" alt="" aria-hidden="true" />
+          </div>
+        </section>
+
+        <!-- QUICK ACCESS -->
+        <section class="quick">
+          <h2>QUICK ACCESS</h2>
+
+          <div class="quick-grid">
+            <a class="quick-card" href="#">
+              <div class="quick-icon"><img src="ikon konsul.png"></div>
+              <div class="quick-title">Konsultasi</div>
+              <div class="quick-desc">Chat with counselor</div>
+            </a>
+
+            <a class="quick-card" href="#">
+              <div class="quick-icon"><img src="self healing.png"></div>
+              <div class="quick-title">Self-Healing</div>
+              <div class="quick-desc">Tools & exercises</div>
+            </a>
+
+            <a class="quick-card" href="#">
+              <div class="quick-icon"><img src="ikon self discovery.png"></div>
+              <div class="quick-title">Self-Discovery</div>
+              <div class="quick-desc">Know yourself more</div>
+            </a>
+          </div>
+        </section>
+
+        <!-- MID AREA -->
+        <section class="mid">
+          <!-- LEFT: HISTORY JOURNALING -->
+          <article class="card big">
+            <div class="card-head">
+              <h3>History Journaling</h3>
+              <span class="muted">Latest entries</span>
+            </div>
+
+            <div class="journal-layout">
+              <div class="journal-mini-list">
+                <div class="mini-item"></div>
+                <div class="mini-item"></div>
+                <div class="mini-item"></div>
+                <div class="mini-item"></div>
+                <div class="mini-item"></div>
+                <div class="mini-item"></div>
+              </div>
+
+              <div class="journal-preview">
+                <div class="preview-box">
+                  <div class="preview-line w60"></div>
+                  <div class="preview-line w90"></div>
+                  <div class="preview-line w75"></div>
+                  <div class="preview-line w50"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- RIGHT: JAR + COUNSELOR LIST -->
+          <aside class="right-col">
+            <!-- Jar of Happiness -->
+            <article class="card jar">
+              <div class="jar-head">
+                <h3>Jar of Happiness</h3>
+                <div class="jar-sub">Click Here!</div>
+              </div>
+              <div class="jar-illustration" aria-hidden="true"></div>
+            </article>
+
+            <!-- Counselor list -->
+            <article class="card counselor">
+              <div class="card-head row">
+                <h3>Counselor</h3>
+                <button class="btn-small" type="button">View All</button>
+              </div>
+
+              <div class="list">
+                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
+                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
+                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
+                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
+                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
+              </div>
+            </article>
+          </aside>
+        </section>
+
+        <!-- BOTTOM -->
+        <section class="bottom">
+          <!-- Lyrics -->
+          <article class="card lyrics">
+            <div class="card-head">
+              <h3>🎵 Lyric Of The Day</h3>
+            </div>
+            <div class="lyrics-body">
+              <div class="song-title">Who Knows</div>
+              <div class="lyrics-text">
+                “You’re Pure, You’re Kind…<br/>
+                Let me know, let me know…”
+              </div>
+            </div>
+          </article>
+
+          <!-- Score Gaming -->
+          <article class="card score">
+            <div class="card-head">
+              <h3>Score Gaming</h3>
+              <span class="muted">Your progress</span>
+            </div>
+            <div class="score-box">
+              <div class="score-row"><span>Streak</span><b>7 days</b></div>
+              <div class="score-row"><span>XP</span><b>1,240</b></div>
+              <div class="score-row"><span>Level</span><b>8</b></div>
+
+              <div class="progress"><div class="progress-bar"></div></div>
+              <div class="muted small">Next level in 260 XP</div>
+            </div>
+          </article>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
