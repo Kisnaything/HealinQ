@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="admin_dashboard.css" />
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="profile-icon">
+          <img src="ikon profile.png" alt="Admin Profile">
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav-item active">
+          <span class="nav-icon">
+            <img src="ikon home.png" alt="Home">
+          </span>
+          <span class="nav-label">Home</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">
+            <img src="ikon konsul.png" alt="Konsultasi">
+          </span>
+          <span class="nav-label">Konsultasi</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">
+            <img src="self healing.png" alt="Self-Healing">
+          </span>
+          <span class="nav-label">Self-Healing</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">
+            <img src="ikon self discovery.png" alt="FYP">
+          </span>
+          <span class="nav-label">FYP</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+      <div class="content">
+
+        <!-- HEADER -->
+        <section class="page-header">
+          <div class="page-title-wrap">
+            <h1>Dashboard Overview</h1>
+            <p>Welcome back! Here’s your overview today</p>
+          </div>
+
+          <div class="date-pill" id="datePill">Monday, 2 March 2026</div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-grid" id="statsGrid">
+          <!-- diisi JS -->
+        </section>
+
+        <!-- USER GROWTH -->
+        <section class="panel panel-growth">
+          <div class="panel-header">
+            <h2>User Growth</h2>
+            <div class="legend">
+              <span class="legend-item">
+                <span class="legend-dot pink"></span>
+                New users
+              </span>
+              <span class="legend-item">
+                <span class="legend-dot blue"></span>
+                Consultations
+              </span>
+            </div>
+          </div>
+
+          <div class="growth-chart-area">
+            <div class="chart-grid"></div>
+            <div class="chart-svg-wrap">
+              <svg id="growthChart" viewBox="0 0 1000 320" preserveAspectRatio="none">
+                <path id="lineUsers" class="line-users" d=""></path>
+                <path id="lineConsultations" class="line-consultations" d=""></path>
+              </svg>
+            </div>
+
+            <div class="chart-labels" id="chartLabels">
+              <!-- diisi JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- NEW USERS TABLE -->
+        <section class="panel panel-table">
+          <div class="panel-header panel-header-column">
+            <h2>New Users</h2>
+            <p>New registered users in the last 7 days</p>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="users-table">
+              <thead>
+                <tr>
+                  <th>USERS</th>
+                  <th>ADDRESS</th>
+                  <th>JOINED</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody">
+                <!-- diisi JS -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- BOTTOM GRID -->
+        <section class="bottom-grid">
+          <!-- TOP COUNSELORS -->
+          <section class="panel small-panel">
+            <div class="panel-header">
+              <h2>Top Counselors</h2>
+            </div>
+
+            <div class="counselor-rank-list" id="topCounselorsList">
+              <!-- diisi JS -->
+            </div>
+          </section>
+
+          <!-- RECENT ACTIVITY -->
+          <section class="panel small-panel">
+            <div class="panel-header">
+              <h2>Recent Activity</h2>
+            </div>
+
+            <div class="activity-list" id="recentActivityList">
+              <!-- diisi JS -->
+            </div>
+          </section>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    /* =========================
+       DUMMY DATA
+    ========================= */
+    const statsData = [
+      {
+        icon: "ikon active user.png",
+        value: "1,000",
+        label: "Total active users"
+      },
+      {
+        icon: "ikon registered counselors.png",
+        value: "10",
+        label: "Registered counselors"
+      },
+      {
+        icon: "ikon consultations.png",
+        value: "100",
+        label: "Consultations"
+      },
+      {
+        icon: "ikon total chats.png",
+        value: "9,000",
+        label: "Total chats"
+      }
+    ];
+
+    const growthData = [
+      { day: "Mon", users: 28, consultations: 20 },
+      { day: "Tue", users: 42, consultations: 31 },
+      { day: "Wed", users: 36, consultations: 26 },
+      { day: "Thu", users: 60, consultations: 40 },
+      { day: "Fri", users: 76, consultations: 57 },
+      { day: "Sat", users: 64, consultations: 46 },
+      { day: "Sun", users: 88, consultations: 70 }
+    ];
+
+    const newUsersData = [
+      {
+        name: "Alya Putri",
+        avatar: "ikon profile.png",
+        address: "Bandung, Indonesia",
+        joined: "Today"
+      },
+      {
+        name: "Rafli Aditya",
+        avatar: "ikon profile.png",
+        address: "Jakarta, Indonesia",
+        joined: "Today"
+      },
+      {
+        name: "Nabila Salsabila",
+        avatar: "ikon profile.png",
+        address: "Surabaya, Indonesia",
+        joined: "Yesterday"
+      },
+      {
+        name: "Daffa Mahendra",
+        avatar: "ikon profile.png",
+        address: "Yogyakarta, Indonesia",
+        joined: "2 days ago"
+      },
+      {
+        name: "Keisya Anindita",
+        avatar: "ikon profile.png",
+        address: "Malang, Indonesia",
+        joined: "3 days ago"
+      }
+    ];
+
+    const topCounselorsData = [
+      {
+        name: "Jessica Atalya Kriswianto",
+        specialty: "Stress Management",
+        rating: 4.9,
+        sessions: 120,
+        avatar: "ikon profile.png"
+      },
+      {
+        name: "Nadya Ramadhani",
+        specialty: "Self Growth",
+        rating: 4.8,
+        sessions: 110,
+        avatar: "ikon profile.png"
+      },
+      {
+        name: "Rina Maharani",
+        specialty: "Anxiety Support",
+        rating: 4.8,
+        sessions: 104,
+        avatar: "ikon profile.png"
+      },
+      {
+        name: "Kevin Ardana",
+        specialty: "Career & Passion",
+        rating: 4.7,
+        sessions: 96,
+        avatar: "ikon profile.png"
+      }
+    ];
+
+    const recentActivityData = [
+      {
+        title: "New consultation booked",
+        desc: "Alya Putri booked a consultation with Jessica.",
+        time: "5 mins ago",
+        type: "booking"
+      },
+      {
+        title: "New user registered",
+        desc: "Rafli Aditya created a new account.",
+        time: "12 mins ago",
+        type: "user"
+      },
+      {
+        title: "Journal entry submitted",
+        desc: "Nabila posted a new self-healing journal.",
+        time: "30 mins ago",
+        type: "journal"
+      },
+      {
+        title: "Counselor profile updated",
+        desc: "Kevin Ardana updated his specialty section.",
+        time: "1 hour ago",
+        type: "update"
+      },
+      {
+        title: "Chat milestone reached",
+        desc: "System reached 9,000 total chats.",
+        time: "Today",
+        type: "chat"
+      }
+    ];
+
+    /* =========================
+       RENDER DATE
+    ========================= */
+    function renderDate() {
+      const el = document.getElementById("datePill");
+      const date = new Date();
+
+      const options = {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      };
+
+      el.textContent = date.toLocaleDateString("en-GB", options);
+    }
+
+    /* =========================
+       RENDER STATS
+    ========================= */
+    function renderStats() {
+      const statsGrid = document.getElementById("statsGrid");
+      statsGrid.innerHTML = "";
+
+      statsData.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "stat-card";
+        card.innerHTML = `
+          <div class="stat-icon">
+            <img src="${item.icon}" alt="${item.label}">
+          </div>
+          <div class="stat-number">${item.value}</div>
+          <div class="stat-label">${item.label}</div>
+        `;
+        statsGrid.appendChild(card);
+      });
+    }
+
+    /* =========================
+       CHART
+    ========================= */
+    function createLinePath(dataArray, maxValue, width, height, padding) {
+      const stepX = (width - padding * 2) / (dataArray.length - 1);
+
+      return dataArray.map((value, index) => {
+        const x = padding + (stepX * index);
+        const y = height - padding - ((value / maxValue) * (height - padding * 2));
+        return `${index === 0 ? "M" : "L"} ${x} ${y}`;
+      }).join(" ");
+    }
+
+    function renderGrowthChart() {
+      const labelsWrap = document.getElementById("chartLabels");
+      const lineUsers = document.getElementById("lineUsers");
+      const lineConsultations = document.getElementById("lineConsultations");
+
+      labelsWrap.innerHTML = "";
+
+      growthData.forEach(item => {
+        const label = document.createElement("span");
+        label.textContent = item.day;
+        labelsWrap.appendChild(label);
+      });
+
+      const maxValue = Math.max(
+        ...growthData.map(item => item.users),
+        ...growthData.map(item => item.consultations)
+      );
+
+      const usersPath = createLinePath(
+        growthData.map(item => item.users),
+        maxValue,
+        1000,
+        320,
+        30
+      );
+
+      const consultationsPath = createLinePath(
+        growthData.map(item => item.consultations),
+        maxValue,
+        1000,
+        320,
+        30
+      );
+
+      lineUsers.setAttribute("d", usersPath);
+      lineConsultations.setAttribute("d", consultationsPath);
+    }
+
+    /* =========================
+       USERS TABLE
+    ========================= */
+    function renderUsersTable() {
+      const tbody = document.getElementById("usersTableBody");
+      tbody.innerHTML = "";
+
+      newUsersData.forEach((user) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>
+            <div class="user-cell">
+              <img class="user-avatar" src="${user.avatar}" alt="${user.name}">
+              <span>${user.name}</span>
+            </div>
+          </td>
+          <td>${user.address}</td>
+          <td>${user.joined}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    /* =========================
+       TOP COUNSELORS
+    ========================= */
+    function renderTopCounselors() {
+      const list = document.getElementById("topCounselorsList");
+      list.innerHTML = "";
+
+      topCounselorsData.forEach((item, index) => {
+        const row = document.createElement("div");
+        row.className = "rank-item";
+        row.innerHTML = `
+          <div class="rank-left">
+            <div class="rank-number">${index + 1}</div>
+            <img class="rank-avatar" src="${item.avatar}" alt="${item.name}">
+            <div class="rank-info">
+              <div class="rank-name">${item.name}</div>
+              <div class="rank-specialty">${item.specialty}</div>
+            </div>
+          </div>
+
+          <div class="rank-right">
+            <div class="rank-rating">⭐ ${item.rating}</div>
+            <div class="rank-sessions">${item.sessions} sessions</div>
+          </div>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    /* =========================
+       RECENT ACTIVITY
+    ========================= */
+    function renderRecentActivity() {
+      const list = document.getElementById("recentActivityList");
+      list.innerHTML = "";
+
+      recentActivityData.forEach((item) => {
+        const row = document.createElement("div");
+        row.className = "activity-item";
+        row.innerHTML = `
+          <div class="activity-icon ${item.type}"></div>
+          <div class="activity-info">
+            <div class="activity-title">${item.title}</div>
+            <div class="activity-desc">${item.desc}</div>
+          </div>
+          <div class="activity-time">${item.time}</div>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    renderDate();
+    renderStats();
+    renderGrowthChart();
+    renderUsersTable();
+    renderTopCounselors();
+    renderRecentActivity();
+  </script>
+</body>
+</html>
