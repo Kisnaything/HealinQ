@@ -7,79 +7,82 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="user_dashboard.css" />
 </head>
 <body>
-
   <div class="dash">
 
-    <!-- LEFT STICKY NAV -->
+    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-top">
-        <div class="avatar" title="Profile"><img src="ikon profile.png"></div>
+        <a href="#" class="avatar" title="Profile">
+          <img src="ikon profile.png" alt="Profile">
+        </a>
       </div>
 
       <nav class="nav">
         <a class="nav-item active" href="#">
-          <span class="icon">🏠</span>
+          <span class="icon">
+            <img src="ikon home.png" alt="Home">
+          </span>
           <span class="label">Home</span>
         </a>
+
         <a class="nav-item" href="#">
-          <span class="icon">💬</span>
+          <span class="icon">
+            <img src="ikon konsul.png" alt="Konsultasi">
+          </span>
           <span class="label">Konsultasi</span>
         </a>
+
         <a class="nav-item" href="journaling.html">
-          <span class="icon">💗</span>
+          <span class="icon">
+            <img src="self healing.png" alt="Self-Healing">
+          </span>
           <span class="label">Self-Healing</span>
         </a>
+
         <a class="nav-item" href="#">
-          <span class="icon">🧠</span>
-          <span class="label">Self-Discovery</span>
+          <span class="icon">
+            <img src="ikon self discovery.png" alt="Find Your Passion">
+          </span>
+          <span class="label">FYP</span>
         </a>
       </nav>
-
-      <div class="sidebar-bottom">
-        <div class="brand-pill">
-          <div class="bunny"></div>
-          <span>HealinQ</span>
-        </div>
-      </div>
     </aside>
 
-    <!-- RIGHT CONTENT (SCROLL ONLY HERE) -->
+    <!-- MAIN -->
     <main class="main">
 
-      <!-- FIXED TOP RIGHT (LOGO + MASKOT) -->
+      <!-- TOP BRAND -->
       <div class="top-brand" aria-label="HealinQ brand">
-        <!-- ganti src sesuai nama file kamu -->
         <img class="brand-mascot" src="maskot1.png" alt="Mascot" />
         <img class="brand-logo" src="Logo HealinQ.png" alt="HealinQ Logo" />
       </div>
 
       <div class="container">
 
-        <!-- Header -->
+        <!-- HEADER -->
         <header class="header">
           <h1>Hello, Buddy!</h1>
-          <p>Monday, 2 March 2026. How’s your day?</p>
+          <p id="todayText">Monday, 2 March 2026. How’s your day?</p>
         </header>
 
-        <!-- HERO CARD -->
+        <!-- HERO -->
         <section class="hero">
-          <div class="hero-inner">
-            <div class="quote">
-              <p class="quote-text">
-                “Take a deep breath. You’re doing better than you think.”
-              </p>
-              <p class="quote-sub">
-                Let’s make today gentle and meaningful ✨
-              </p>
-            </div>
+          <div class="hero-text">
+            <p>
+              Aku Alin! tahukah kamu, seperti kelinci yang suka menggali, psikologi mengajak kita untuk
+              'menggali' lebih dalam ke dalam diri sendiri. Aku di sini sebagai teman dalam petualangan
+              introspeksi itu. Dari sini, kita bisa tumbuh, melompat lebih tinggi, dan menjalani hidup
+              dengan lebih sadar. Selamat datang di ruang tumbuh kita bersama!
+            </p>
+          </div>
 
-            <!-- HERO MASKOT -->
-            <img class="hero-bunny" src="maskot2.png" alt="" aria-hidden="true" />
+          <div class="hero-mascot-wrap">
+            <img class="hero-bunny" src="maskot2.png" alt="Mascot HealinQ" />
           </div>
         </section>
 
@@ -88,121 +91,389 @@
           <h2>QUICK ACCESS</h2>
 
           <div class="quick-grid">
+            <a class="quick-card" href="journaling.html">
+              <div class="quick-icon">
+                <img src="self healing.png" alt="Daily Journaling">
+              </div>
+              <div class="quick-title">Daily Journaling</div>
+              <div class="quick-desc">Write Your Own Feelings</div>
+            </a>
+
             <a class="quick-card" href="#">
-              <div class="quick-icon"><img src="ikon konsul.png"></div>
+              <div class="quick-icon">
+                <img src="ikon konsul.png" alt="Konsultasi">
+              </div>
               <div class="quick-title">Konsultasi</div>
-              <div class="quick-desc">Chat with counselor</div>
+              <div class="quick-desc">We Will Help You Here.</div>
             </a>
 
             <a class="quick-card" href="#">
-              <div class="quick-icon"><img src="self healing.png"></div>
-              <div class="quick-title">Self-Healing</div>
-              <div class="quick-desc">Tools & exercises</div>
-            </a>
-
-            <a class="quick-card" href="#">
-              <div class="quick-icon"><img src="ikon self discovery.png"></div>
-              <div class="quick-title">Self-Discovery</div>
-              <div class="quick-desc">Know yourself more</div>
+              <div class="quick-icon">
+                <img src="ikon self discovery.png" alt="Find Your Passion">
+              </div>
+              <div class="quick-title">Find Your Passion</div>
+              <div class="quick-desc">Let’s Find Your Own Passion!</div>
             </a>
           </div>
         </section>
 
-        <!-- MID AREA -->
-        <section class="mid">
-          <!-- LEFT: HISTORY JOURNALING -->
-          <article class="card big">
+        <!-- MID TOP -->
+        <section class="mid-top">
+          <!-- RECENT JOURNAL -->
+          <article class="card journal-card">
             <div class="card-head">
-              <h3>History Journaling</h3>
-              <span class="muted">Latest entries</span>
+              <h3>Recent Journal</h3>
+              <button class="btn-small" id="newJournalBtn" type="button">⊕ New</button>
             </div>
 
-            <div class="journal-layout">
-              <div class="journal-mini-list">
-                <div class="mini-item"></div>
-                <div class="mini-item"></div>
-                <div class="mini-item"></div>
-                <div class="mini-item"></div>
-                <div class="mini-item"></div>
-                <div class="mini-item"></div>
-              </div>
-
-              <div class="journal-preview">
-                <div class="preview-box">
-                  <div class="preview-line w60"></div>
-                  <div class="preview-line w90"></div>
-                  <div class="preview-line w75"></div>
-                  <div class="preview-line w50"></div>
-                </div>
-              </div>
+            <div class="journal-list" id="journalList">
+              <!-- diisi JS -->
             </div>
           </article>
 
-          <!-- RIGHT: JAR + COUNSELOR LIST -->
-          <aside class="right-col">
-            <!-- Jar of Happiness -->
-            <article class="card jar">
-              <div class="jar-head">
-                <h3>Jar of Happiness</h3>
-                <div class="jar-sub">Click Here!</div>
-              </div>
-              <div class="jar-illustration" aria-hidden="true"></div>
-            </article>
+          <!-- JAR -->
+          <article class="card jar-card">
+            <h3>Jar of Happiness</h3>
+            <button class="jar-link" id="jarBtn" type="button">Click Here!</button>
 
-            <!-- Counselor list -->
-            <article class="card counselor">
-              <div class="card-head row">
-                <h3>Counselor</h3>
-                <button class="btn-small" type="button">View All</button>
-              </div>
+            <div class="jar-image-wrap">
+              <img src="jar.png" alt="Jar of Happiness" class="jar-image">
+            </div>
+          </article>
+        </section>
 
-              <div class="list">
-                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
-                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
-                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
-                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
-                <div class="list-item"><div class="pfp"></div><div class="line"></div></div>
-              </div>
-            </article>
-          </aside>
+        <!-- MID BOTTOM -->
+        <section class="mid-bottom">
+          <!-- CONSULTATION HISTORY -->
+          <article class="card consult-history-card">
+            <div class="card-head">
+              <h3>Consultation History</h3>
+              <button class="btn-outline" type="button">See All</button>
+            </div>
+
+            <div class="ticket-grid" id="ticketGrid">
+              <!-- diisi JS -->
+            </div>
+          </article>
+
+          <!-- COUNSELOR -->
+          <article class="card counselor-card">
+            <div class="card-head">
+              <h3>Counselor</h3>
+              <button class="btn-outline" type="button">View All</button>
+            </div>
+
+            <div class="counselor-list" id="counselorList">
+              <!-- diisi JS -->
+            </div>
+          </article>
         </section>
 
         <!-- BOTTOM -->
         <section class="bottom">
-          <!-- Lyrics -->
-          <article class="card lyrics">
-            <div class="card-head">
-              <h3>🎵 Lyric Of The Day</h3>
+          <!-- LYRICS -->
+          <article class="card lyrics-card">
+            <div class="lyrics-badge">
+              <span class="badge-icon">🎵</span>
+              <span>Lyric Of The Day</span>
             </div>
-            <div class="lyrics-body">
-              <div class="song-title">Who Knows</div>
-              <div class="lyrics-text">
-                “You’re Pure, You’re Kind…<br/>
-                Let me know, let me know…”
-              </div>
+
+            <div class="lyrics-content" id="lyricsContent">
+              <!-- diisi JS -->
             </div>
           </article>
 
-          <!-- Score Gaming -->
-          <article class="card score">
-            <div class="card-head">
-              <h3>Score Gaming</h3>
-              <span class="muted">Your progress</span>
-            </div>
-            <div class="score-box">
-              <div class="score-row"><span>Streak</span><b>7 days</b></div>
-              <div class="score-row"><span>XP</span><b>1,240</b></div>
-              <div class="score-row"><span>Level</span><b>8</b></div>
+          <!-- SCORE -->
+          <article class="card score-card">
+            <h3>Your Score Progress</h3>
 
-              <div class="progress"><div class="progress-bar"></div></div>
-              <div class="muted small">Next level in 260 XP</div>
+            <div class="score-box">
+              <div class="score-row">
+                <span>Streak</span>
+                <b id="streakValue">7 days</b>
+              </div>
+              <div class="score-row">
+                <span>XP</span>
+                <b id="xpValue">1,240</b>
+              </div>
+              <div class="score-row">
+                <span>Level</span>
+                <b id="levelValue">8</b>
+              </div>
+
+              <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+              </div>
+
+              <div class="progress-note" id="progressNote">Next level in 260 XP</div>
             </div>
           </article>
         </section>
-
       </div>
     </main>
-
   </div>
+
+  <script>
+    /* =========================
+       DATA DINAMIS
+    ========================== */
+    const journals = [
+      {
+        day: "09",
+        month: "March",
+        emoji: "😟",
+        title: "I Hate My Life Lately...",
+        time: "15:18",
+        status: "Today"
+      },
+      {
+        day: "10",
+        month: "March",
+        emoji: "😄",
+        title: "Finally, I Found My Passion...",
+        time: "18:18",
+        status: "Yesterday"
+      },
+      {
+        day: "11",
+        month: "March",
+        emoji: "😟",
+        title: "People Always Leave. Don’t Get...",
+        time: "12:10",
+        status: "2 Days Ago"
+      }
+    ];
+
+    const consultationHistory = [
+      { day: "16", month: "March" },
+      { day: "15", month: "March" },
+      { day: "14", month: "March" },
+      { day: "13", month: "March" },
+      { day: "12", month: "March" },
+      { day: "11", month: "March" },
+      { day: "10", month: "March" },
+      { day: "11", month: "March" },
+      { day: "10", month: "March" }
+    ];
+
+    const counselors = [
+      {
+        name: "Jessica Atalya Kriswianto",
+        specialty: "Stress Management",
+        rating: 4.5,
+        image: "ikon profile.png"
+      },
+      {
+        name: "Jessica Atalya Kriswianto",
+        specialty: "Stress Management",
+        rating: 4.5,
+        image: "ikon profile.png"
+      },
+      {
+        name: "Jessica Atalya Kriswianto",
+        specialty: "Stress Management",
+        rating: 4.5,
+        image: "ikon profile.png"
+      },
+      {
+        name: "Jessica Atalya Kriswianto",
+        specialty: "Stress Management",
+        rating: 4.4,
+        image: "ikon profile.png"
+      },
+      {
+        name: "Jessica Atalya Kriswianto",
+        specialty: "Stress Management",
+        rating: 4.4,
+        image: "ikon profile.png"
+      },
+      {
+        name: "Jessica Atalya Kriswianto",
+        specialty: "Stress Management",
+        rating: 4.3,
+        image: "ikon profile.png"
+      }
+    ];
+
+    const lyricData = {
+      title: "Who Knows",
+      lines: [
+        "“You’re Pure, You’re Kind (Let Me Know, Let Me Know, Let Me Know, Let Me)”",
+        "“Mature, Divine (Let Me Know, Let Me Know, Let Me)”",
+        "“You Might Be Too Good For Me, Unattainable (Let Me Know, Let Me Know, Let Me Know)”"
+      ]
+    };
+
+    const scoreData = {
+      streak: 7,
+      xp: 1240,
+      level: 8,
+      currentXPInLevel: 740,
+      xpToNextLevel: 1000
+    };
+
+    /* =========================
+       RENDER FUNCTIONS
+    ========================== */
+    function renderJournals() {
+      const journalList = document.getElementById("journalList");
+      journalList.innerHTML = "";
+
+      journals.forEach((item, index) => {
+        const journalItem = document.createElement("div");
+        journalItem.className = "journal-item";
+        journalItem.innerHTML = `
+          <div class="journal-date-box">
+            <div class="journal-day">${item.day}</div>
+            <div class="journal-month">${item.month}</div>
+          </div>
+
+          <div class="journal-info">
+            <div class="journal-emoji">${item.emoji}</div>
+            <div class="journal-title">${item.title}</div>
+            <div class="journal-meta">${item.time} . ${item.status}</div>
+          </div>
+        `;
+
+        journalItem.addEventListener("click", () => {
+          alert("Buka detail journal: " + item.title);
+        });
+
+        journalList.appendChild(journalItem);
+
+        if (index !== journals.length - 1) {
+          const divider = document.createElement("div");
+          divider.className = "journal-divider";
+          journalList.appendChild(divider);
+        }
+      });
+    }
+
+    function renderConsultHistory() {
+      const ticketGrid = document.getElementById("ticketGrid");
+      ticketGrid.innerHTML = "";
+
+      consultationHistory.forEach((ticket) => {
+        const el = document.createElement("button");
+        el.className = "ticket";
+        el.type = "button";
+        el.innerHTML = `
+          <span class="ticket-day">${ticket.day}</span>
+          <span class="ticket-month">${ticket.month}</span>
+        `;
+
+        el.addEventListener("click", () => {
+          alert(`Consultation history ${ticket.day} ${ticket.month}`);
+        });
+
+        ticketGrid.appendChild(el);
+      });
+    }
+
+    function renderCounselors() {
+      const counselorList = document.getElementById("counselorList");
+      counselorList.innerHTML = "";
+
+      counselors.forEach((counselor) => {
+        const item = document.createElement("div");
+        item.className = "counselor-item";
+        item.innerHTML = `
+          <div class="counselor-left">
+            <img class="counselor-avatar" src="${counselor.image}" alt="${counselor.name}">
+            <div class="counselor-info">
+              <div class="counselor-name">${counselor.name}</div>
+              <div class="counselor-specialty">${counselor.specialty}</div>
+            </div>
+          </div>
+
+          <div class="counselor-right">
+            <div class="rating">⭐ ${counselor.rating}</div>
+            <button class="book-btn" type="button">Book</button>
+          </div>
+        `;
+
+        const bookBtn = item.querySelector(".book-btn");
+        bookBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          alert("Booking counselor: " + counselor.name);
+        });
+
+        item.addEventListener("click", () => {
+          alert("Lihat profil counselor: " + counselor.name);
+        });
+
+        counselorList.appendChild(item);
+      });
+    }
+
+    function renderLyrics() {
+      const lyricsContent = document.getElementById("lyricsContent");
+      lyricsContent.innerHTML = `
+        <div class="lyrics-title">${lyricData.title}</div>
+        <div class="lyrics-text">
+          ${lyricData.lines.map(line => `<p>${line}</p>`).join("")}
+        </div>
+      `;
+    }
+
+    function renderScore() {
+      document.getElementById("streakValue").textContent = `${scoreData.streak} days`;
+      document.getElementById("xpValue").textContent = scoreData.xp.toLocaleString("en-US");
+      document.getElementById("levelValue").textContent = scoreData.level;
+
+      const progressPercent = (scoreData.currentXPInLevel / scoreData.xpToNextLevel) * 100;
+      document.getElementById("progressBar").style.width = `${progressPercent}%`;
+
+      const remain = scoreData.xpToNextLevel - scoreData.currentXPInLevel;
+      document.getElementById("progressNote").textContent = `Next level in ${remain} XP`;
+    }
+
+    function setupEvents() {
+      document.getElementById("newJournalBtn").addEventListener("click", () => {
+        const title = prompt("Tulis judul journal baru:");
+        if (!title) return;
+
+        journals.unshift({
+          day: "12",
+          month: "March",
+          emoji: "🙂",
+          title: title,
+          time: "20:00",
+          status: "Today"
+        });
+
+        renderJournals();
+      });
+
+      document.getElementById("jarBtn").addEventListener("click", () => {
+        const message = prompt("Tulis satu hal kecil yang membuatmu bahagia hari ini:");
+        if (!message) return;
+        alert("Pesan kebahagiaan tersimpan: " + message);
+      });
+    }
+
+    function renderTodayText() {
+      const todayText = document.getElementById("todayText");
+      const date = new Date();
+
+      const options = {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      };
+
+      const formatted = date.toLocaleDateString("en-GB", options);
+      todayText.textContent = `${formatted}. How’s your day?`;
+    }
+
+    renderTodayText();
+    renderJournals();
+    renderConsultHistory();
+    renderCounselors();
+    renderLyrics();
+    renderScore();
+    setupEvents();
+  </script>
 </body>
 </html>
